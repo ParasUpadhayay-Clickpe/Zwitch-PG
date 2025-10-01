@@ -5,13 +5,10 @@ export default async function handler(req, res) {
     }
 
     try {
-        const PG_ACCESS = process.env.PG_ACCESS || '';
-        const PG_SECRET = process.env.PG_SECRET || '';
-        console.log("____________________________________________________")
-        console.log(PG_ACCESS)
-        console.log(PG_SECRET)
+        const NEXT_PUBLIC_PG_ACCESS = process.env.NEXT_PUBLIC_PG_ACCESS || '';
+        const NEXT_PUBLIC_PG_SECRET = process.env.NEXT_PUBLIC_PG_SECRET || '';
 
-        if (!PG_ACCESS || !PG_SECRET) {
+        if (!NEXT_PUBLIC_PG_ACCESS || !NEXT_PUBLIC_PG_SECRET) {
             return res.status(500).json({ error: 'Server missing PG_ACCESS/PG_SECRET environment variables' });
         }
 
